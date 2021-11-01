@@ -34,58 +34,56 @@ class Design extends StatelessWidget {
                   ),
                 ),
               ),
-              SafeArea(
-                child: Positioned(
-                  top: 20,
-                  left: 0.0,
-                  right: 1.0,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Expanded(
-                          flex: 0,
-                          child: IconButton(
-                            icon: const Icon(Icons.arrow_back_ios,
-                                color: backIconButtonColor),
-                            onPressed: () =>
-                                Provider.of<DataModel>(context, listen: false)
-                                    .showPrevious(),
-                          ),
+              Positioned(
+                top: 20,
+                left: 0.0,
+                right: 1.0,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        flex: 0,
+                        child: IconButton(
+                          icon: const Icon(Icons.arrow_back_ios,
+                              color: backIconButtonColor),
+                          onPressed: () =>
+                              Provider.of<DataModel>(context, listen: false)
+                                  .showPrevious(),
                         ),
-                        Expanded(
-                          child: Consumer<DataModel>(
-                              builder: (context, data, child) {
-                            return RoundedProgressBar(
-                              height: 10,
-                              percent: ((data.index + 1) * 100) /
-                                  data.textData.length,
-                              margin: const EdgeInsets.symmetric(vertical: 16),
-                              borderRadius: BorderRadius.circular(24),
-                              style: RoundedProgressBarStyle(
-                                borderWidth: 0,
-                                widthShadow: 0,
-                                colorProgress: barProgessColor,
-                                colorProgressDark: Colors.grey.shade100,
-                              ),
-                            );
-                          }),
-                        ),
-                        const Expanded(
-                          flex: 0,
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 12),
-                            child: Text(
-                              barText,
-                              style: TextStyle(
-                                color: barTextColor,
-                              ),
+                      ),
+                      Expanded(
+                        child: Consumer<DataModel>(
+                            builder: (context, data, child) {
+                          return RoundedProgressBar(
+                            height: 10,
+                            percent:
+                                ((data.index + 1) * 100) / data.textData.length,
+                            margin: const EdgeInsets.symmetric(vertical: 16),
+                            borderRadius: BorderRadius.circular(24),
+                            style: RoundedProgressBarStyle(
+                              borderWidth: 0,
+                              widthShadow: 0,
+                              colorProgress: barProgessColor,
+                              colorProgressDark: Colors.grey.shade100,
+                            ),
+                          );
+                        }),
+                      ),
+                      const Expanded(
+                        flex: 0,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 12),
+                          child: Text(
+                            barText,
+                            style: TextStyle(
+                              color: barTextColor,
                             ),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
