@@ -16,7 +16,7 @@ and you should be able to look at it for more detail here: https://www.figma.com
 
 I made the design flexible and tested on two-three different phones as well to see that there are no design errors.I have attched the screen shot as well.
 you can find those screen shots in the Screens Folder.
-For the drill_screen.dart file i made use of column , stack , postion , clippath, progressbar ,floating button ,Icon ,scafe area to make neat design.
+For the drill_screen.dart file i made use of column , stack , postion , clippath, progressbar ,floating button ,Icon  to make neat design.
 Made sure there are no text over flow issues.
 I created a const_variable file which contains some static variables.So incase if any other developer wants to change any thing ,He/She doesnt need to go 
 through whole code
